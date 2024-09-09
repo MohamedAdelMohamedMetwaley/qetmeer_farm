@@ -35,7 +35,7 @@ function ProductsSlider() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     direction: "rtl",
-    loop: true,
+    loop: false,
   });
   return (
     <section
