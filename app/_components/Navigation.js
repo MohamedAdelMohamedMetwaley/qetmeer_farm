@@ -1,9 +1,22 @@
 import Link from "next/link";
+import CollapsedNavigation from "./CollapsedNavigation";
+
+const isOpen = false;
+const isActive = () => false;
+// import { useState } from "react";
+// import { useRouter } from "next/router";
 
 function Navigation() {
+  // const router = useRouter(); // Get the current route
+
+  // const isActive = (path) => router.pathname === path;
+
+  // Function to toggle the mobile menu
+
   return (
-    <nav className="z-10 text-sm">
-      <ul className="flex gap-8 items-center">
+    <nav className="z-10 text-xs sm:text-sm flex flex-col items-center sm:block">
+      <CollapsedNavigation />
+      <ul className="hidden sm:flex gap-8 items-center">
         <li>
           <Link
             href="/"

@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./_components/Header";
 import { Amiri, Cairo, Roboto } from "next/font/google";

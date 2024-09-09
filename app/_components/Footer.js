@@ -15,7 +15,7 @@ function Footer() {
       <div className="container flex justify-between items-center">
         {/* Contact Information */}
         <div className="text-center md:text-left ">
-          <p>
+          <p className="text-sm sm:text-base">
             Contact number: <strong>01004408078</strong>{" "}
             <span className="sm:mx-3">|</span> Email:{" "}
             <strong>info@zfarm.com</strong>

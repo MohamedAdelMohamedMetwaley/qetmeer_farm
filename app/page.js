@@ -8,7 +8,7 @@ export default function Page() {
     <main className="">
       <Hero />
       <Featured />
-      {/* <Categories /> */}
+      <Categories />
       <Benefits />
     </main>
   );

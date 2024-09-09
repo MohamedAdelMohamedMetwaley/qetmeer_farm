@@ -1,4 +1,5 @@
 "use client";
+
 import prod1 from "@/public/milk.jpg";
 import prod2 from "@/public/butter.jpg";
 import prod3 from "@/public/cheese.jpg";

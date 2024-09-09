@@ -4,7 +4,7 @@ function Categories() {
   return (
     <section className="flex flex-col items-center justify-center mt-24">
       <h2 className="text-4xl mb-14">الفئات</h2>
-      <div className="flex gap-20">
+      <div className="flex flex-wrap justify-center flex-col sm:flex-row gap-10 lg:gap-20">
         <Link
           href="/products?category=XXX"
           className="categ-card"
