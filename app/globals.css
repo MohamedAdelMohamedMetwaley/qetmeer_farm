@@ -3,25 +3,118 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --underline-width: 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
+  font-family: var(--amiri-font), "Arial", sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .content-grid {
+    --padding-inline: 1rem;
+    --content-max-width: 900px;
+    --breakout-max-width: 1300px;
+
+    --breakout-size: calc(
+      (var(--breakout-max-width) - var(--content-max-width)) / 2
+    );
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(var(--padding-inline), 1fr)
+      [breakout-start] minmax(0, var(--breakout-size))
+      [content-start] min(
+        100% - (var(--padding-inline) * 2),
+        var(--content-max-width)
+      )
+      [content-end]
+      minmax(0, var(--breakout-size)) [breakout-end]
+      minmax(var(--padding-inline), 1fr) [full-width-end];
+  }
+  /* setting up */
+  .content-grid > :not(.breakout, .full-width),
+  .full-width > :not(.breakout, .full-width) {
+    grid-column: content;
+  }
+
+  .content-grid > .breakout {
+    grid-column: breakout;
+  }
+
+  .content-grid > .full-width {
+    grid-column: full-width;
+  }
+  .cairo-font {
+    font-family: var(--cairo-font), "Arial", sans-serif;
+  }
+  .roboto-font {
+    font-family: var(--roboto-font), system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Open Sans", "Helvetica Neue", sans-serif;
+  }
+}
+
+@layer components {
+  .categ-card {
+    @apply h-96 bg-white  flex flex-col items-center justify-center w-64 rounded-md border border-black  shadow-[inset_0px_0px_100px_4px_var(--overlay-color)] hover:shadow-[inset_0px_0px_100px_100px_var(--overlay-color)] transition duration-500;
+  }
+}
+
+@media (width < 645px) {
+  .embla {
+    max-width: 90%;
+    --slide-size: auto;
+  }
+  .embla__viewport {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+  .embla__slide {
+    transform: translate3d(0, 0, 0);
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+  }
+}
+
+nav a,
+.underline-link {
+  position: relative;
+}
+
+nav a::before,
+.underline-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #126741;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.underline-link::before {
+  transform-origin: top right;
+  background-color: black;
+  bottom: -1px;
+}
+nav a:hover::before,
+.underline-link:hover::before {
+  transform: scaleX(1);
 }

@@ -1,15 +1,25 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "./_components/Header";
+import { Amiri, Cairo, Roboto } from "next/font/google";
+import Footer from "./_components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--amiri-font",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const cairo = Cairo({
+  subsets: ["arabic"],
+  weight: ["400", "500", "700"],
+  variable: "--cairo-font",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--roboto-font",
 });
 
 export const metadata = {
@@ -19,11 +29,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ar">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cairo.variable} ${amiri.variable} ${roboto.variable} antialiased relative min-h-screen bg-background`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
