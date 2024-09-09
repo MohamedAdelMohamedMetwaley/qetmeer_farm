@@ -6,7 +6,7 @@ function Benefits() {
     //   <div className="flex gap-16">d</div>
     // </div>
     <section className="flex flex-col items-center justify-center mt-32 mb-24">
-      <h2 className="text-4xl mb-16">لماذا تختارنا؟</h2>
+      <h2 className="text-3xl sm:text-4xl mb-16">لماذا تختارنا؟</h2>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-10">
           {/* Farm-Fresh Products */}

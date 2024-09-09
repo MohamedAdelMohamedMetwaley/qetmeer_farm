@@ -1,17 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import CollapsedNavigation from "./CollapsedNavigation";
-
-const isOpen = false;
-const isActive = () => false;
-// import { useState } from "react";
-// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 function Navigation() {
-  // const router = useRouter(); // Get the current route
-
-  // const isActive = (path) => router.pathname === path;
-
-  // Function to toggle the mobile menu
+  const pathname = usePathname();
+  const isActive = (path) => pathname === path;
 
   return (
     <nav className="z-10 text-xs sm:text-sm flex flex-col items-center sm:block">
@@ -20,7 +15,9 @@ function Navigation() {
         <li>
           <Link
             href="/"
-            className="text-primary font-bold transition-all duration-300"
+            className={`hover:text-green-800 transition-all duration-300 ${
+              isActive("/") ? "active" : ""
+            }`}
           >
             الصفحة الرئيسية
           </Link>
@@ -28,7 +25,9 @@ function Navigation() {
         <li>
           <Link
             href="/products"
-            className="hover:text-green-800 duration-300 transition-colors"
+            className={`hover:text-green-800 transition-all duration-300 ${
+              isActive("/products") ? "active" : ""
+            }`}
           >
             جميع المنتجات
           </Link>
@@ -36,7 +35,9 @@ function Navigation() {
         <li>
           <Link
             href="/about"
-            className="hover:text-green-800 transition-colors duration-300"
+            className={`hover:text-green-800 transition-all duration-300 ${
+              isActive("/about") ? "active" : ""
+            }`}
           >
             عنا
           </Link>
@@ -44,7 +45,9 @@ function Navigation() {
         <li>
           <Link
             href="/login"
-            className="hover:text-green-800 duration-300 transition-colors"
+            className={`hover:text-green-800 transition-all duration-300 ${
+              isActive("/login") ? "active" : ""
+            }`}
           >
             تسجيل الدخول
           </Link>

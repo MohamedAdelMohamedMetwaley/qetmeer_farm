@@ -11,15 +11,15 @@ function Hero() {
     >
       <div className="absolute inset-0 h-full w-full overflow-hidden bg-fixed bg-green-950 bg-opacity-60">
         <div className="flex flex-col h-full items-center justify-center text-white">
-          <h1 className="text-6xl font-bold mb-6 mt-8">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 mt-8">
             مزارعنا تقدم أعلى جودة بأفضل الأسعار
           </h1>
-          <p className="mb-8 tracking-wide text-stone-200">
+          <p className="text-xs sm:text-base mb-8 tracking-wide text-stone-200">
             اطلب دلوقتي واستمتع بأفضل المنتجات من مزرعة قطمير
           </p>
           <Link
             href="/"
-            className="border-black border text-lg tracking-wider bg-primary py-4 px-7 rounded-lg hover:bg-green-900 transition-colors duration-300 font-bold"
+            className="border-black border text-base sm:text-lg tracking-wider bg-primary py-4 px-7 rounded-lg hover:bg-green-900 transition-colors duration-300 font-bold"
           >
             تصفح المنتجات
           </Link>

@@ -66,7 +66,10 @@ body {
 
 @layer components {
   .categ-card {
-    @apply h-60 sm:h-96 bg-white  flex flex-col items-center justify-center w-64 rounded-md border border-black  shadow-[inset_0px_0px_100px_4px_var(--overlay-color)] hover:shadow-[inset_0px_0px_100px_100px_var(--overlay-color)] transition duration-500;
+    @apply h-60 sm:h-96 bg-white  flex flex-col items-center justify-center max-[425px]:w-72 w-96 sm:w-64 rounded-md border border-black  shadow-[inset_0px_0px_100px_4px_var(--overlay-color)] hover:shadow-[inset_0px_0px_100px_100px_var(--overlay-color)] transition duration-500;
+  }
+  .active {
+    @apply text-primary font-bold hover:text-primary;
   }
 }
 

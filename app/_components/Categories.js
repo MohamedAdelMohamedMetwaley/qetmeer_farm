@@ -3,8 +3,8 @@ import Link from "next/link";
 function Categories() {
   return (
     <section className="flex flex-col items-center justify-center mt-24">
-      <h2 className="text-4xl mb-14">الفئات</h2>
-      <div className="flex flex-wrap justify-center flex-col sm:flex-row gap-10 lg:gap-20">
+      <h2 className="text-3xl sm:text-4xl mb-14">الفئات</h2>
+      <div className="flex flex-wrap justify-center flex-col sm:flex-row gap-5 sm:gap-10 lg:gap-20">
         <Link
           href="/products?category=XXX"
           className="categ-card"
@@ -21,16 +21,16 @@ function Categories() {
             <path
               d="M21.6667 5.41666H43.3334M24.375 5.41666V12.9702C24.375 15.1092 23.7417 17.2003 22.555 18.98L20.7784 21.645C19.5912 23.4254 18.9579 25.5176 18.9584 27.6575V54.1667C18.9584 55.6033 19.5291 56.981 20.5449 57.9968C21.5607 59.0126 22.9385 59.5833 24.375 59.5833H40.625C42.0616 59.5833 43.4394 59.0126 44.4552 57.9968C45.471 56.981 46.0417 55.6033 46.0417 54.1667V27.6548C46.0417 25.5158 45.4084 23.4247 44.2217 21.645L42.445 18.98C41.2579 17.1996 40.6246 15.1074 40.625 12.9675V5.41666"
               stroke="black"
-              stroke-width="6.16667"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="6.16667"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M18.9584 40.625C21.1027 39.7267 23.4043 39.264 25.7292 39.264C28.0541 39.264 30.3557 39.7267 32.5 40.625C34.6444 41.5233 36.946 41.986 39.2709 41.986C41.5958 41.986 43.8974 41.5233 46.0417 40.625"
               stroke="black"
-              stroke-width="6.16667"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="6.16667"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </Link>
