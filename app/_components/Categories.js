@@ -6,7 +6,7 @@ function Categories() {
       <h2 className="text-3xl sm:text-4xl mb-14">الفئات</h2>
       <div className="flex flex-wrap justify-center flex-col sm:flex-row gap-5 sm:gap-10 lg:gap-20">
         <Link
-          href="/products?category=XXX"
+          href="/products?category=ألبان"
           className="categ-card"
           style={{ "--overlay-color": "rgba(0,247,247,0.4)" }}
         >
@@ -35,7 +35,7 @@ function Categories() {
           </svg>
         </Link>
         <Link
-          href="/products?category=XXX"
+          href="/products?category=لحوم"
           className="categ-card"
           style={{ "--overlay-color": "rgba(206,52,52,0.4)" }}
         >
@@ -54,7 +54,7 @@ function Categories() {
           </svg>
         </Link>
         <Link
-          href="/products?category=XXX"
+          href="/products?category=زبدة"
           className="categ-card"
           style={{ "--overlay-color": "rgba(253,218,100,0.6)" }}
         >
