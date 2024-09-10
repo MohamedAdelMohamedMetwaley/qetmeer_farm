@@ -24,7 +24,12 @@ function FeaturedProductsSlider() {
         <div ref={emblaRef} className="embla__viewport">
           <div className="embla__container gap-5 md:gap-10 lg:gap-20">
             {topThreeProducts.map((product) => (
-              <ProductCard product={product} key={product.name} />
+              <ProductCard
+                containerHeight="h-[290px] md:h-[330px] lg:h-[400px]"
+                imageWidth="w-[195px] md:w-[220px] lg:w-[300px]"
+                product={product}
+                key={product.name}
+              />
             ))}
           </div>
         </div>

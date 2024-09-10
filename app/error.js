@@ -10,7 +10,7 @@ export default function Error({ error, reset }) {
         className="inline-block bg-primary text-WHITE px-6 py-3 text-lg"
         onClick={reset}
       >
-        حاول مجددا
+        حاول مجدداً
       </button>
     </main>
   );

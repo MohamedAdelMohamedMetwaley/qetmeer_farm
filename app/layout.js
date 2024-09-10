@@ -8,18 +8,21 @@ const amiri = Amiri({
   subsets: ["arabic"],
   weight: ["400", "700"],
   variable: "--amiri-font",
+  display: "swap",
 });
 
 const cairo = Cairo({
   subsets: ["arabic"],
   weight: ["400", "500", "700"],
   variable: "--cairo-font",
+  display: "swap",
 });
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--roboto-font",
+  display: "swap",
 });
 
 export const metadata = {

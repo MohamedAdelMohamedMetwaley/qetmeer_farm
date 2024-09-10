@@ -27,7 +27,7 @@ function ProductsSlider({ category = "all" }) {
 
   return (
     <div className="w-full">
-      <h2 className="text-4xl font-bold mb-2">{category}</h2>
+      <h2 className="text-4xl font-bold mb-3">{category}</h2>
       <hr className="w-11/12 sm:w-4/5 border-stone-500" />
       <section className={`embla flex w-full mb-7 lg:mb-10 mt-6`} dir="rtl">
         <div ref={emblaRef} className="embla__viewport">
@@ -35,7 +35,12 @@ function ProductsSlider({ category = "all" }) {
             {products.map(
               (product) =>
                 (isShowingAllProducts || product.category === category) && (
-                  <ProductCard product={product} key={product.name} />
+                  <ProductCard
+                    containerHeight="h-[260px] sm:h-[290px] lg:h-[330px]"
+                    imageWidth={"w-[160px] sm:w-[195px] lg:w-[220px]"}
+                    product={product}
+                    key={product.name}
+                  />
                 )
             )}
           </div>
