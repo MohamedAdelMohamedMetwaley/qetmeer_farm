@@ -13,7 +13,7 @@ function ProductCard({ product }) {
 
   return (
     <div className="relative h-[290px] md:h-[330px] lg:h-[400px] border border-black flex flex-col items-center bg-white embla__slide">
-      <div className="border-b relative overflow-clip border-black aspect-[6/5] w-[195px] md:w-[220px] lg:w-[300px] embla__slide">
+      <div className="border-b relative overflow-clip border-black aspect-[6/5] w-[195px] md:w-[220px] lg:w-[300px]">
         <Image
           src={image}
           fill
@@ -44,7 +44,7 @@ function ProductCard({ product }) {
         / {measuringUnit}
       </p>
       <div className="absolute bottom-3 w-full flex items-center justify-center gap-2">
-        <button className="bg-primary text-white w-[70%] text-sm md:text-base md:w-[75%] py-2 rounded-md font-semibold transition-colors duration-300 hover:bg-green-900">
+        <button className="bg-primary text-white text-sm md:text-base w-[75%] py-2 rounded-md font-semibold transition-colors duration-300 hover:bg-green-900">
           أضف إلى العربة
         </button>
         <button className="md:w-7 md:h-7 w-5 h-5">
@@ -53,6 +53,7 @@ function ProductCard({ product }) {
             className={`cursor-pointer hover:text-red-500 transition-colors duration-300 fill-red-500 text-lg md:text-2xl ${
               filled && "text-red-500"
             }`}
+            textAnchor="favourite"
           />
         </button>
       </div>

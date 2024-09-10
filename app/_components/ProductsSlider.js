@@ -13,6 +13,7 @@ const featured = [
     discount: 0,
     image: prod1,
     measuringUnit: "لتر",
+    category: "ألبان",
   },
   {
     name: "زبدة بقري",
@@ -20,6 +21,7 @@ const featured = [
     discount: 20,
     image: prod2,
     measuringUnit: "كج",
+    category: "زبدة",
   },
   {
     name: "جبنة",
@@ -27,27 +29,34 @@ const featured = [
     discount: 0,
     image: prod3,
     measuringUnit: "كج",
+    category: "ألبان",
   },
 ];
 
-function ProductsSlider() {
-  const featuredProducts = featured;
+const products = featured;
 
+function ProductsSlider({ category = "all", addStyle = "" }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
+    dragFree: true,
     direction: "rtl",
-    loop: false,
+    active: false,
+    breakpoints: { "(max-width: 645px)": { active: true } },
   });
+
   return (
     <section
-      className="embla flex justify-center w-full mb-7 sm:mb-10"
+      className={`embla flex w-full mb-7 lg:mb-10 mt-10 ${addStyle}`}
       dir="rtl"
     >
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container sm:flex gap-5 md:gap-10 lg:gap-20">
-          {featuredProducts.map((product) => (
-            <ProductCard product={product} key={product.name} />
-          ))}
+      <div ref={emblaRef} className="embla__viewport">
+        <div className="embla__container gap-5 md:gap-10 lg:gap-20">
+          {products.map(
+            (product) =>
+              (category === "all" || product.category === category) && (
+                <ProductCard product={product} key={product.name} />
+              )
+          )}
         </div>
       </div>
     </section>

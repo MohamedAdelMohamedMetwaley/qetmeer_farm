@@ -1,9 +1,9 @@
-import Link from "next/link";
+"use client";
 import { useState } from "react";
+import NavLinks from "./NavLinks";
 
-export default function CollapsedNavigation() {
+export default function CollapsedNavigation({ children }) {
   const [isOpen, setIsOpen] = useState(false);
-  const isActive = () => false;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -57,50 +57,9 @@ export default function CollapsedNavigation() {
       </div>
       {isOpen && (
         <div className="sm:hidden">
-          <div className="flex flex-col items-center space-y-4 py-4">
-            <Link
-              href="/"
-              className={`${
-                isActive("/") ? "text-green-800 font-bold" : "text-gray-600"
-              } hover:text-green-800`}
-              onClick={() => setIsOpen(false)} // Close the menu on link click
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className={`${
-                isActive("/about")
-                  ? "text-green-600 font-bold"
-                  : "text-gray-600"
-              } hover:text-green-600`}
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/products"
-              className={`${
-                isActive("/products")
-                  ? "text-green-600 font-bold"
-                  : "text-gray-600"
-              } hover:text-green-600`}
-              onClick={() => setIsOpen(false)}
-            >
-              Products
-            </Link>
-            <Link
-              href="/contact"
-              className={`${
-                isActive("/contact")
-                  ? "text-green-600 font-bold"
-                  : "text-gray-600"
-              } hover:text-green-600`}
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-          </div>
+          <ul className="flex flex-col items-center space-y-5 pt-6 text-base">
+            <NavLinks setIsOpen={setIsOpen} />
+          </ul>
         </div>
       )}
     </>
