@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function NavLinks({ setIsOpen }) {
+function NavLinks({ setIsOpen = () => {} }) {
   const pathname = usePathname();
   const isActive = (path) => pathname === path;
-
   return (
     <>
       <li>

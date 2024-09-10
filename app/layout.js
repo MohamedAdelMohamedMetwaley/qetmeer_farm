@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "./_components/Header";
 import { Amiri, Cairo, Roboto } from "next/font/google";
 import Footer from "./_components/Footer";
-import Spinner from "./_components/Spinner";
 import { ProductProvider } from "./_components/ProductContext";
 
 const amiri = Amiri({
