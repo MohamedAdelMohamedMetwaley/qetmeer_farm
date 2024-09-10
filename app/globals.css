@@ -99,7 +99,6 @@ body {
 }
 
 .embla {
-  max-width: 95%;
   --slide-size: auto;
 }
 .embla__viewport {

@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useProducts } from "./ProductContext";
 import { useMemo } from "react";
 
-function ProductsSlider({ category = "all", addStyle = "" }) {
+function ProductsSlider({ category = "all" }) {
   const { products } = useProducts();
   const numOfProductsInCategory = useMemo(
     () =>
@@ -13,6 +13,7 @@ function ProductsSlider({ category = "all", addStyle = "" }) {
       products.filter((product) => product.category === category).length,
     [category, products]
   );
+  const isShowingAllProducts = category === "all";
 
   const [emblaRef] = useEmblaCarousel({
     align: "start",
@@ -22,26 +23,18 @@ function ProductsSlider({ category = "all", addStyle = "" }) {
     breakpoints: { "(max-width: 645px)": { active: true } },
   });
 
-  if (category !== "all" && !numOfProductsInCategory) return;
+  if (!numOfProductsInCategory) return;
 
   return (
     <div className="w-full">
-      {category !== "all" && (
-        <>
-          <h2 className="text-4xl font-bold mb-4">{category}</h2>
-          <hr className="w-11/12 sm:w-4/5 border-stone-500" />
-        </>
-      )}
-
-      <section
-        className={`embla flex w-full mb-7 lg:mb-10 mt-10 ${addStyle}`}
-        dir="rtl"
-      >
+      <h2 className="text-4xl font-bold mb-2">{category}</h2>
+      <hr className="w-11/12 sm:w-4/5 border-stone-500" />
+      <section className={`embla flex w-full mb-7 lg:mb-10 mt-6`} dir="rtl">
         <div ref={emblaRef} className="embla__viewport">
-          <div className="embla__container gap-5 md:gap-10 lg:gap-20">
+          <div className="embla__container gap-5 md:gap-8 lg:gap-12">
             {products.map(
               (product) =>
-                (category === "all" || product.category === category) && (
+                (isShowingAllProducts || product.category === category) && (
                   <ProductCard product={product} key={product.name} />
                 )
             )}

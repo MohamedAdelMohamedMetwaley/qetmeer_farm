@@ -10,7 +10,7 @@ function page({ searchParams }) {
   return (
     <main className="min-h-screen flex flex-col items-center">
       <SearchProducts />
-      <section className="flex flex-col w-full gap-16 px-5 sm:px-10 my-16">
+      <section className="flex flex-col w-full gap-10 px-5 sm:px-10 my-12">
         {categories.map(
           (category) =>
             (filter === category || filter === "all") && (

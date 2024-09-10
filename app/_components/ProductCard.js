@@ -12,8 +12,10 @@ function ProductCard({ product }) {
   const { name, image, price, discount, measuringUnit } = product;
 
   return (
-    <div className="relative h-[290px] md:h-[330px] lg:h-[400px] border border-black flex flex-col items-center bg-white embla__slide">
-      <div className="border-b relative overflow-clip border-black aspect-[6/5] w-[195px] md:w-[220px] lg:w-[300px]">
+    // <div className="relative h-[290px] md:h-[330px] lg:h-[400px] border border-black flex flex-col items-center bg-white embla__slide">
+    //   <div className="border-b relative overflow-clip border-black aspect-[6/5] w-[195px] md:w-[220px] lg:w-[300px]">
+    <div className="relative h-[290px] lg:h-[330px] border border-black flex flex-col items-center bg-white embla__slide">
+      <div className="border-b relative overflow-clip border-black aspect-[6/5] w-[195px] lg:w-[220px]">
         <Image
           src={image}
           fill
