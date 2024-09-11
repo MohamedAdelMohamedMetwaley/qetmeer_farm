@@ -11,7 +11,7 @@ export default function CollapsedNavigation({ children }) {
 
   return (
     <>
-      <div className="sm:hidden">
+      <div className="sm:hidden flex item-center gap-5">
         <button
           onClick={toggleMenu}
           className="text-gray-600 hover:text-green-800 focus:outline-none"
@@ -58,7 +58,7 @@ export default function CollapsedNavigation({ children }) {
       {isOpen && (
         <div className="sm:hidden">
           <ul className="flex flex-col items-center space-y-5 pt-6 text-base">
-            <NavLinks setIsOpen={setIsOpen} />
+            <NavLinks toggleMenu={toggleMenu} />
           </ul>
         </div>
       )}

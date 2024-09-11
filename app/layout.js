@@ -1,8 +1,11 @@
 import "./globals.css";
 import Header from "./_components/Header";
 import { Amiri, Cairo, Roboto } from "next/font/google";
-import Footer from "./_components/Footer";
 import { ProductProvider } from "./_components/ProductContext";
+import FooterLayoutPart from "./_components/FooterLayoutPart";
+import Footer from "./_components/Footer";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import HeaderLayoutPart from "./_components/HeaderLayoutPart";
 
 const amiri = Amiri({
   subsets: ["arabic"],
@@ -37,11 +40,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${cairo.variable} ${amiri.variable} ${roboto.variable} antialiased relative min-h-screen bg-background flex flex-col`}
       >
-        <Header />
-        <div className="flex-1">
+        <HeaderLayoutPart>
+          <Header />
+        </HeaderLayoutPart>
+        <div className="flex-1 content-center">
           <ProductProvider>{children}</ProductProvider>
         </div>
-        <Footer />
+        {/* renders footer conditionally based on path */}
+        <FooterLayoutPart>
+          <Footer />
+        </FooterLayoutPart>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export default function Error({ error, reset }) {
       <p className="text-lg">{error.message}</p>
 
       <button
-        className="inline-block bg-primary text-WHITE px-6 py-3 text-lg"
+        className="inline-block bg-primary hover:bg-green-900 transition-colors duration-300 text-white rounded-md px-6 py-3 text-lg"
         onClick={reset}
       >
         حاول مجدداً

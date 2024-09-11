@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function NavLinks({ setIsOpen = () => {} }) {
+function NavLinks({ toggleMenu }) {
   const pathname = usePathname();
   const isActive = (path) => pathname === path;
   return (
@@ -14,7 +14,7 @@ function NavLinks({ setIsOpen = () => {} }) {
           className={`hover:text-green-800 transition-all duration-300 ${
             isActive("/") ? "active" : ""
           }`}
-          onClick={() => setIsOpen(false)}
+          onClick={toggleMenu}
         >
           الصفحة الرئيسية
         </Link>
@@ -25,7 +25,7 @@ function NavLinks({ setIsOpen = () => {} }) {
           className={`hover:text-green-800 transition-all duration-300 ${
             isActive("/products") ? "active" : ""
           }`}
-          onClick={() => setIsOpen(false)}
+          onClick={toggleMenu}
         >
           جميع المنتجات
         </Link>
@@ -36,7 +36,7 @@ function NavLinks({ setIsOpen = () => {} }) {
           className={`hover:text-green-800 transition-all duration-300 ${
             isActive("/about") ? "active" : ""
           }`}
-          onClick={() => setIsOpen(false)}
+          onClick={toggleMenu}
         >
           عنا
         </Link>
@@ -47,7 +47,7 @@ function NavLinks({ setIsOpen = () => {} }) {
           className={`hover:text-green-800 transition-all duration-300 ${
             isActive("/login") ? "active" : ""
           }`}
-          onClick={() => setIsOpen(false)}
+          onClick={toggleMenu}
         >
           تسجيل الدخول
         </Link>

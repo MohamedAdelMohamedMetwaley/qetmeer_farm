@@ -81,16 +81,6 @@ body {
     animation: rotate 1s infinite linear;
   }
 
-  .spinner-mini {
-    margin: 0;
-    width: 20px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border: 2px solid theme("colors.secondary");
-    border-right-color: transparent;
-    animation: rotate 1s infinite linear;
-  }
-
   @keyframes rotate {
     to {
       transform: rotate(1turn);
@@ -115,12 +105,12 @@ body {
   min-width: 0;
 }
 
-nav a,
+nav li > a,
 .underline-link {
   position: relative;
 }
 
-nav a::before,
+nav li > a::before,
 .underline-link::before {
   content: "";
   position: absolute;
@@ -139,7 +129,7 @@ nav a::before,
   background-color: black;
   bottom: -1px;
 }
-nav a:hover::before,
+nav li > a:hover::before,
 .underline-link:hover::before {
   transform: scaleX(1);
 }
