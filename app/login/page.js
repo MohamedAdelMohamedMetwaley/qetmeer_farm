@@ -11,7 +11,7 @@ function Page() {
         <div className="flex flex-col gap-4 w-4/5">
           <Link
             href="#"
-            className="bg-[#dc503f] text-white text-lg border border-stone-300 px-4 py-2 rounded-md flex justify-center items-center relative"
+            className="bg-[#dc503f] text-white text-lg px-4 py-2 rounded-md flex justify-center items-center relative"
           >
             <p>سجل باستخدام جوجل</p>
             <FontAwesomeIcon className="absolute left-4" icon={faGoogle} />

@@ -5,7 +5,6 @@ export default function Error({ error, reset }) {
     <main className="flex justify-center items-center flex-col gap-6 h-full">
       <h1 className="text-3xl font-semibold">حدث خطا ما!</h1>
       <p className="text-lg">{error.message}</p>
-
       <button
         className="inline-block bg-primary hover:bg-green-900 transition-colors duration-300 text-white rounded-md px-6 py-3 text-lg"
         onClick={reset}

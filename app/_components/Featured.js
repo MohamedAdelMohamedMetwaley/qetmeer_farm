@@ -1,7 +1,7 @@
 import Link from "next/link";
 import FeaturedProductsSlider from "./FeaturedProductsSlider";
 
-function Featured() {
+async function Featured() {
   return (
     <section className="flex flex-col items-center justify-center mt-24 px-3 w-full">
       <h2 className="text-3xl sm:text-4xl">الأكثر مبيعاً</h2>

@@ -18,7 +18,7 @@ function Hero() {
             اطلب دلوقتي واستمتع بأفضل المنتجات من مزرعة قطمير
           </p>
           <Link
-            href="/"
+            href="/products"
             className="border-black border text-base sm:text-lg tracking-wider bg-primary py-4 px-7 rounded-lg hover:bg-green-900 transition-colors duration-300 font-bold"
           >
             تصفح المنتجات

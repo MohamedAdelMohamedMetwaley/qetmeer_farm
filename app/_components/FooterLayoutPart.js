@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 function FooterLayoutPart({ children }) {
   const pathname = usePathname();
-  const noFooterPaths = ["/login"];
+  const noFooterPaths = ["/login", "/order/new"];
   const hideFooter = noFooterPaths.includes(pathname);
 
   return hideFooter ? <></> : children;

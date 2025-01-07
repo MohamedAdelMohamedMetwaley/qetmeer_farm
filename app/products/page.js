@@ -1,30 +1,28 @@
 import Link from "next/link";
-import ProductsSlider from "../_components/ProductsSlider";
-import SearchProducts from "../_components/SearchProducts";
+import { getCategories, getProducts } from "../_lib/data-service";
+import ViewAllProductsLink from "../_components/ViewAllProductsLink";
+import ProductsWithSearch from "../_components/ProductsWithSearch";
 
-function page({ searchParams }) {
-  const categories = ["ألبان", "لحوم", "زبدة"];
-  //assign 'filter' to the parameters in the url, if it doesn't exist assign to 'all'
-  const filter = searchParams?.category ?? "all";
+// If we use searchParams, this will not be neaded as the page will be dynamic
+export const revalidate = 10;
+
+async function page() {
+  // fetch in parallel
+  const [categories, products] = await Promise.all([
+    getCategories(),
+    getProducts(),
+  ]);
 
   return (
     <main className="min-h-screen flex flex-col items-center">
-      <SearchProducts />
-      <section className="flex flex-col w-full gap-10 px-5 sm:px-10 my-12">
-        {categories.map(
-          (category) =>
-            (filter === category || filter === "all") && (
-              <ProductsSlider key={category} category={category} />
-            )
-        )}
-      </section>
-      {filter !== "all" && (
+      <ProductsWithSearch categories={categories} products={products} />
+      <ViewAllProductsLink>
         <div className="text-lg sm:text-2xl  px-4 py-3 m-5 rounded-md hover:text-green-800 ">
           <Link href="/products" className="underline">
             عرض جميع المنتجات &larr;
           </Link>
         </div>
-      )}
+      </ViewAllProductsLink>
     </main>
   );
 }

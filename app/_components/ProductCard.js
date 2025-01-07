@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as filledHeart } from "@fortawesome/free-solid-svg-icons";
+import AddToCartBtn from "./AddToCartBtn";
 
 function numToArabic(number) {
   return number.toLocaleString("ar-EG");
@@ -9,7 +10,7 @@ function numToArabic(number) {
 const filled = false;
 
 function ProductCard({ containerHeight, imageWidth, product }) {
-  const { name, image, price, discount, measuringUnit } = product;
+  const { name, image, price, discount, measuring_unit, stock } = product;
 
   return (
     <div
@@ -45,12 +46,10 @@ function ProductCard({ containerHeight, imageWidth, product }) {
         ) : (
           `${numToArabic(price)}ج`
         )}{" "}
-        / {measuringUnit}
+        / {measuring_unit}
       </p>
       <div className="absolute bottom-3 w-full flex items-center justify-center gap-2">
-        <button className="bg-primary text-white text-sm md:text-base w-[75%] py-2 rounded-md font-semibold transition-colors duration-300 hover:bg-green-900">
-          أضف إلى العربة
-        </button>
+        <AddToCartBtn product={product} />
         <button className="md:w-7 md:h-7 w-5 h-5">
           <FontAwesomeIcon
             icon={filled ? filledHeart : regularHeart}

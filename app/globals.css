@@ -62,14 +62,8 @@ body {
       BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
       "Open Sans", "Helvetica Neue", sans-serif;
   }
-}
-
-@layer components {
-  .categ-card {
-    @apply h-60 sm:h-96 bg-white  flex flex-col items-center justify-center max-[425px]:w-72 w-96 sm:w-64 rounded-md border border-black  shadow-[inset_0px_0px_100px_4px_var(--overlay-color)] hover:shadow-[inset_0px_0px_100px_100px_var(--overlay-color)] transition duration-500;
-  }
-  .active {
-    @apply text-primary font-bold hover:text-primary;
+  .amiri-font {
+    font-family: var(--amiri-font), "Amiri", serif;
   }
   .spinner {
     margin: 3.2rem auto 1.6rem;
@@ -85,6 +79,42 @@ body {
     to {
       transform: rotate(1turn);
     }
+  }
+  .no-scroll {
+    overflow: hidden;
+  }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .slide-in {
+    transform: translateX(100%);
+    animation: slide-in 0.3s forwards;
+  }
+  @keyframes slide-in {
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+@layer components {
+  .categ-card {
+    @apply h-60 sm:h-96 bg-white  flex flex-col items-center justify-center max-[425px]:w-72 w-96 sm:w-64 rounded-md border border-black  shadow-[inset_0px_0px_100px_4px_var(--overlay-color)] hover:shadow-[inset_0px_0px_100px_100px_var(--overlay-color)] transition duration-[400ms];
+  }
+  .active {
+    @apply text-primary font-bold hover:text-primary;
+  }
+  .input {
+    @apply rounded-md border border-stone-200 px-2 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-green-600 md:px-4 md:py-2;
+  }
+  .primary-btn {
+    @apply bg-primary hover:bg-green-900 transition-colors duration-300 text-white rounded-md;
   }
 }
 
